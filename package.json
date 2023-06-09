@@ -15,7 +15,10 @@
         "buildAll": "yarn cache clean && npx rimraf node_modules/ && npx rimraf yarn.lock && yarn && yarn build"
     },
     "dependencies": {
-        "@types/node": "^12.12.26"
+        "@types/node": "^12.12.26",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "pug": "^3.0.2"
     },
     "devDependencies": {
         "@types/jest": "^24.0.6",
