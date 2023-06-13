@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Список токенів</title>
+</head>
+<body>
+  <h1>Список токенів</h1>
+  <ul>
+    <% tokens.forEach(function(token) { %>
+      <li>
+        <p>Ім'я: <%= token.name %></p>
+        <p>Токен: <%= token.token %></p>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
