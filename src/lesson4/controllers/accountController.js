@@ -3,7 +3,7 @@ const Token = require('../models/token');
 
 exports.getAccountList = (req, res) => {
   Account.findAll()
-    .then((accounts) => res.json(accounts))
+    .then((accounts) => res.render('accounts', { accounts }))
     .catch((error) => res.status(500).json({ error: 'Помилка сервера' }));
 };
 
@@ -46,6 +46,6 @@ exports.deleteAccount = (req, res) => {
 exports.getAccountTokens = (req, res) => {
   const { id } = req.params;
   Token.findAll({ where: { accountId: id } })
-    .then((tokens) => res.json(tokens))
+    .then((tokens) => res.render('tokens', { tokens }))
     .catch((error) => res.status(500).json({ error: 'Помилка сервера' }));
 };
