@@ -2,7 +2,7 @@ const Token = require('../models/token');
 
 exports.getTokenList = (req, res) => {
   Token.findAll()
-    .then((tokens) => res.json(tokens))
+    .then((tokens) => res.render('tokens', { tokens }))
     .catch((error) => res.status(500).json({ error: 'Помилка сервера' }));
 };
 
