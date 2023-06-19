@@ -11,7 +11,7 @@ io.on('connection', (socket) => {
     output: process.stdout
   });
 
-  rl.question('Введіть шлях до файлу book.txt.gz: ', (path) => {
+    rl.question('/stream/book.txt.gz ', (path) => {
     const r = fs.createReadStream(path);
     const w = fs.createWriteStream('book.txt');
 
