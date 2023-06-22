@@ -1,5 +1,7 @@
 const Account = require('../models/account');
 const Token = require('../models/token');
+const jwt = require('jsonwebtoken');
+const Account = require('../models/account');
 
 exports.getAccountList = (req, res) => {
   Account.findAll()
@@ -48,4 +50,10 @@ exports.getAccountTokens = (req, res) => {
   Token.findAll({ where: { accountId: id } })
     .then((tokens) => res.render('tokens', { tokens }))
     .catch((error) => res.status(500).json({ error: 'Помилка сервера' }));
+};
+
+exports.authenticate = (req, res) => {
+  const { username, password } = req.body;
+  const token = jwt.sign({ username, role }, process.env.JWT_SECRET);
+  res.json({ token });
 };
