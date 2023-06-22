@@ -7,6 +7,9 @@ const path = require('path');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
+const jwt = require('jsonwebtoken');
+const { body, validationResult } = require('express-validator');
+
 const app = express();
 
 app.use(bodyParser.json());
