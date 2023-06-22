@@ -1,6 +1,7 @@
 const Account = require('../models/account');
 const Token = require('../models/token');
 
+
 exports.getAccountList = (req, res) => {
   Account.findAll()
     .then((accounts) => res.render('accounts', { accounts }))
